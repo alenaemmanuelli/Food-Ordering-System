@@ -1,0 +1,4 @@
+Group Name: Quadrant One
+
+Group Leader: Kyle Burchett
+    Skills - I am very experienced with working in java, as well as database structures. I am familiar with scrum and agile methodology so i can keep the team organized and on track.
