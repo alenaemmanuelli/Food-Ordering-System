@@ -2,3 +2,5 @@ Group Name: Quadrant One
 
 Group Leader: Kyle Burchett
     Skills - I am very experienced with working in java, as well as database structures. I am familiar with scrum and agile methodology so i can keep the team organized and on track.
+
+Taying Yang - Group Member, Currently not great at coding/programming as my last few coding courses were 2 semester ago, though i did work on Design, so im a bit familiar with that. I dont mind coding if needed, will just take some time to finish recall my memory.
