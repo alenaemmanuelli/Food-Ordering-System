@@ -6,3 +6,5 @@ Group Leader: Kyle Burchett
 Taying Yang - Group Member, Currently not great at coding/programming as my last few coding courses were 2 semester ago, though i did work on Design, so im a bit familiar with that. I dont mind coding if needed, will just take some time to finish recall my memory.
 
 Kenny Lee - Group Member, I am experienced with Java, Javascript, Python, and have worked with things like HTML and CSS. I have worked with a decent handful of other coding related group projects recently so I will be decent with communication, programming, and design.
+
+Cody Howell - Group Member, I am experienced mostly with working with designing, JavaScript, and CSS. Its been a while since I have done straight Java or Python, but I am decent. Very little Github group-work experience, but some. Other attributes I bring are organization skills and group communication.
