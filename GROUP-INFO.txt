@@ -8,3 +8,6 @@ Taying Yang - Group Member, Currently not great at coding/programming as my last
 Kenny Lee - Group Member, I am experienced with Java, Javascript, Python, and have worked with things like HTML and CSS. I have worked with a decent handful of other coding related group projects recently so I will be decent with communication, programming, and design.
 
 Cody Howell - Group Member, I am experienced mostly with working with designing, JavaScript, and CSS. Its been a while since I have done straight Java or Python, but I am decent. Very little Github group-work experience, but some. Other attributes I bring are organization skills and group communication.
+
+Jayden Patton - Group Member
+    Skills - I am experienced in working with Java, JavaScript, HTML, and CSS programming languages. I haven't used Java in 3 semesters. I am familiar with Figma for prototyping and UI/UX design. I have only used GitHub for my ITCS 3112- Design and Implementation course. 
