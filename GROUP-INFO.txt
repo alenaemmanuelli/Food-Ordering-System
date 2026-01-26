@@ -11,3 +11,6 @@ Cody Howell - Group Member, I am experienced mostly with working with designing,
 
 Jayden Patton - Group Member
     Skills - I am experienced in working with Java, JavaScript, HTML, and CSS programming languages. I haven't used Java in 3 semesters. I am familiar with Figma for prototyping and UI/UX design. I have only used GitHub for my ITCS 3112- Design and Implementation course. 
+
+Alena Emmanuelli - Group Member
+    Skills - I am familiar with Linux commands, C, C#, Python, Java, HTML, CSS, and a bit of JS. My strengths are my organizational and visual skills, knowing what the user wants, and UI/UX design. My coding skills are a bit rusty but I'm hoping to improve during this course.
