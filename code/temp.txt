@@ -1,0 +1,2 @@
+This is a temp file needed to have the code folder to ensure proper file structure.
+  This will be eventually removed when code is added to the project.
