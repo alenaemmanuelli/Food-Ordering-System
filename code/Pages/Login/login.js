@@ -13,7 +13,7 @@ if (form) { // If the form exists, attach an event handler to its submit event
         } 
         else if (user === "employee" && pass === "1234") { // Check if the username is "employee" and the password is "1234"
             message.textContent = "Login successful."; // If the credentials are correct, display a success message
-            window.location.href = "menu.html"; // Redirect the user to the menu.html page after successful login
+            window.location.href = "../Menu/menu.html"; // Redirect the user to the menu.html page after successful login
         } 
         else {
             message.textContent = "Invalid login."; // If the credentials are incorrect, display an error message
