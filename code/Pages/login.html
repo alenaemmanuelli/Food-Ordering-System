@@ -21,5 +21,19 @@
             <li><a href="rewards.html">Deals</a></li>
         </ul>
     </nav>
+        <main class="loginmain"> <!-- Main content for the login page -->
+        <section class="loginbox"> <!-- Container for the login form -->
+            <h2>Employee Login</h2> <!-- Heading for the login section -->
+            <form id="loginForm"> <!-- Form for employee login -->
+                <label for="user">Username</label> <!-- Label for the username input field -->
+                <input type="text" ID="User" Name="User" placeholder="Enter Username"><!-- Input field for the username -->
+                <label for="pass">Password</label> <!-- Label for the password input field -->
+                <input type="password" ID="Pass" Name="Pass" placeholder="Enter password"> <!-- Input field for the password -->
+                <button type="submit">Login</button> <!-- Button to submit the login form -->
+            </form> <!-- Paragraph to display login messages (e.g., success or error messages) -->
+            <p id="loginMessage"></p> <!-- End of the login box section -->
+        </section>
+    </main>
+    <script src = "../js/login.js"></script> <!-- JavaScript file for handling login functionality -->
 </body>
 </html>
