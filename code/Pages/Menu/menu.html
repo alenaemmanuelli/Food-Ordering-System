@@ -22,22 +22,34 @@
         </ul>
     </nav>
 
-    <section id="main-menu"> <!--beginning of main menu-->
+    <section id="main-menu"> <!-- container, beginning of main menu -->
         <h1 id="menu-title">Menu</h1>
-            <section id="entrees" class="menu-section">
+
+        <section id="entrees" class="menu-section">
             <h2 class="section-title">Entrees</h2>
 
-            <div class="menu-item">
+            <!-- 
+            NOTE: be sure to change data-name AND data-price to reflect the information in the span
+            for each item.
+            For example, if you change Item 1 to Pizza, change data-name to "Pizza".
+            -->
+            
+            <div class="menu-item" data-name="Item 1" data-price="5.99">
                 <span>Item 1</span>
-                <span>$x.xx</span>
+                <span>$5.99</span>
+                <button class="add-button" type="button">Add to Cart</button> <!-- add to cart button -->
             </div>
-            <div class="menu-item">
+
+            <div class="menu-item" data-name="Item 2" data-price="10.99">
                 <span>Item 2</span>
-                <span>$x.xx</span>
+                <span>$10.99</span>
+                <button class="add-button" type="button">Add to Cart</button>
             </div>
-            <div class="menu-item">
+
+            <div class="menu-item" data-name="Item 3" data-price="7.99">
                 <span>Item 3</span>
-                <span>$x.xx</span>
+                <span>$7.99</span>
+                <button class="add-button" type="button">Add to Cart</button>
             </div>
 
         </section>
@@ -45,48 +57,63 @@
         <section id="sides" class="menu-section">
             <h2 class="section-title">Sides</h2>
 
-            <div class="menu-item">
-                <span>Item 1</span>
-                <span>$x.xx</span>
-            </div>
-            <div class="menu-item">
-                <span>Item 2</span>
-                <span>$x.xx</span>
-            </div>
-            <div class="menu-item">
-                <span>Item 3</span>
-                <span>$x.xx</span>
+            <div class="menu-item" data-name="Item 4" data-price="2.99">
+                <span>Item 4</span>
+                <span>$2.99</span>
+                <button class="add-button" type="button">Add to Cart</button>
             </div>
 
+            <div class="menu-item" data-name="Item 5" data-price="3.99">
+                <span>Item 5</span>
+                <span>$3.99</span>
+                <button class="add-button" type="button">Add to Cart</button>
+            </div>
+
+            <div class="menu-item" data-name="Item 6" data-price="1.99">
+                <span>Item 6</span>
+                <span>$1.99</span>
+                <button class="add-button" type="button">Add to Cart</button>
+            </div>
 
         </section>
 
         <section id="desserts" class="menu-section">
             <h2 class="section-title">Desserts</h2>
 
-            <div class="menu-item">
-                <span>Item 1</span>
-                <span>$x.xx</span>
+            <div class="menu-item" data-name="Item 7" data-price="4.99">
+                <span>Item 7</span>
+                <span>$4.99</span>
+                <button class="add-button" type="button">Add to Cart</button>
             </div>
-            <div class="menu-item">
-                <span>Item 2</span>
-                <span>$x.xx</span>
+
+            <div class="menu-item" data-name="Item 8" data-price="3.99">
+                <span>Item 8</span>
+                <span>$3.99</span>
+                <button class="add-button" type="button">Add to Cart</button>
             </div>
-            <div class="menu-item">
-                <span>Item 3</span>
-                <span>$x.xx</span>
+
+            <div class="menu-item" data-name="Item 9" data-price="2.99">
+                <span>Item 9</span>
+                <span>$2.99</span>
+                <button class="add-button" type="button">Add to Cart</button>
             </div>
 
         </section>
-    </section> <!--end of main menu-->
+    </section> <!-- end main menu container -->
+
+    <!--
+    Below is the cart preview. When the user clicks add-button, the item added will appear in the
+    preview. From there, the user can then proceed to the Order page if they are happy with their
+    current cart.
+    -->
 
     <section id="cart-preview">
-
+        <h2>Cart Preview</h2>
+        <div id="cart-items">Your cart is empty.</div>
+        <div id="cart-total">Total: $0.00</div>
+        <button id="order-button" type="button" disabled>Proceed to Order</button>
     </section>
 
-    
-
-    
-    
+    <script src="menu.js"></script> <!-- cart logic -->
 </body>
 </html>
