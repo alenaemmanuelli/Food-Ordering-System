@@ -3,25 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Deals - Quadrant One</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="rewards.css">
 </head>
-
 <body>
     <header>
         <a href="../Index/index.html" class="titleheader">
             <h1>Quadrant One Food Ordering</h1>
         </a>
     </header>
-    
     <nav class="navbar">
         <ul class="navbarlinks">
             <li><a href="../Login/login.html">Employee Login</a></li>
-            <li><a href="../Menu/menu.html">Menu</a></li> 
+            <li><a href="../Menu/menu.html">Menu</a></li>
             <li><a href="rewards.html">Deals</a></li>
-            <li class="dashboard-link"><a href="../Dashboard/dashboard.html">Search Dashboard</a></li>
+            <li class="dashboard-link"><a href="../Dashboard/dashboard.html">Staff Dashboard</a></li>
         </ul>
     </nav>
-</body>
+
+    <div class="deals-wrap">
+        <h2>HOT Deals</h2>
+        <p>Check out our current specials and save on your next order!</p>
+
+        <div class="deals-grid">
+            <div class="deal-card">
+                <div style="font-size: 2rem;"></div>
+                <h3>Combo Deal</h3>
+                <p>Item 1 + Item 2 + Item 3</p>
+                <span class="discount">Save $xx.xx</span>
+                <p class="deal-price">$xx.xx</p>
+                <a href="../Menu/menu.html">Order Now</a>
+            </div>
+            <div class="deal-card">
+                <div style="font-size: 2rem;"></div>
+                <h3>Student Special</h3>
+                <p>Item 1 + Item 2</p>
+                <span class="discount">20% Off</span>
+                <p class="deal-price">$xx.xx</p>
+                <a href="../Menu/menu.html">Order Now</a>
+            </div>
+            <div class="deal-card">
+                <div style="font-size: 2rem;"></div>
+                <h3>Dessert Bundle</h3>
+                <p>Item 1 + Item 2</p>
+                <span class="discount">BOGO 50% Off</span>
+                <p class="deal-price">$xx.xx</p>
+                <a href="../Menu/menu.html">Order Now</a>
+            </div>
+        </div>
+    </div>
+
     <script src="../Login/nav-auth.js"></script>
+</body>
 </html>
