@@ -40,19 +40,10 @@ function ready(){
         var input = quantityInputs[i];
         input.addEventListener('change', quantityChanged);
     }
+
+    //activates the purchaseClicked function
+    document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
 }
-
-// // function to format & display numbers correctly
-// function format(amount){
-//     return '$' + amount.toFixed(2); // to 2 decimal places
-// }
-
-// // updates the cart as the user edits it
-// function renderCart(){
-//     const items = Object.values(cart); // array of items
-
-
-// }
 
 //gets information to add item to cart
 function addToCart(event) {
@@ -137,3 +128,18 @@ function updateCartTotal(){
     document.getElementsByClassName('cart-total-price')[0].innerText = '$'+ total;
  
 }
+
+ function purchaseClicked(){
+     alert('Thank you for your purchase!!!');
+     let count = 0;
+     var cartItems = document.getElementsByClassName('cart-items')[0];
+     var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
+     while(cartItems.hasChildNodes()){
+        console.log("currently in cartItems array: " + cartItemNames[0].innerText)
+        sessionStorage.setItem("Item " + count.toString(), cartItemNames[0].innerText)
+        cartItems.removeChild(cartItems.firstChild)
+        console.log("what is being saved: " + sessionStorage.getItem("Item " + count.toString()))
+        count++;
+     }
+     updateCartTotal();     
+ }
