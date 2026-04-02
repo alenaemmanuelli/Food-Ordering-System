@@ -95,3 +95,10 @@ header {
     height: 35px;
 }
 
+.dashboard-link {
+    display: none;
+}
+
+body.logged-in .dashboard-link {
+    display: block;
+}
