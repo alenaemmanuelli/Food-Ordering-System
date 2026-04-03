@@ -1,7 +1,7 @@
 // cart object, session only
 const cart = {};
-let orderNumber = 0;
-let itemNumber = 0;
+//let orderNumber = parseInt(localStorage.getItem("orderNumber")) || 0;
+//let itemNumber = parseInt(localStorage.getItem("itemNumber")) || 0;
 
 // DOM references
 const cartItems = document.getElementById('cart-items');
@@ -131,21 +131,40 @@ function updateCartTotal(){
  
 }
 
-//delete items from the cart and save them to sessionStorage
+//delete items from the cart and save them to localStorage
  function purchaseClicked(){
      alert('Thank you for your purchase!');
      var cartItems = document.getElementsByClassName('cart-items')[0];
      var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
+    let orders = JSON.parse(localStorage.getItem("orders")) || {};
+    let orderNumber = parseInt(localStorage.getItem("orderNumber")) || 0;
+    let items = [];
 
-     while(cartItems.hasChildNodes()){
-        console.log("currently in cartItems array: " + cartItemNames[0].innerText) //testing
-        sessionStorage.setItem(`${orderNumber}${itemNumber}`, cartItemNames[0].innerText)
-        cartItems.removeChild(cartItems.firstChild)
-        console.log("what is being saved: " + sessionStorage.getItem(`${orderNumber}${itemNumber}`)) //testing
-        itemNumber++;
-     }
+     //while(cartItems.hasChildNodes()){
+        //console.log("currently in cartItems array: " + cartItemNames[0].innerText) //testing
+        //localStorage.setItem(`${orderNumber}-${itemNumber}`, cartItemNames[0].innerText)
+        //cartItems.removeChild(cartItems.firstChild)
+        //console.log("what is being saved: " + localStorage.getItem(`${orderNumber}-${itemNumber}`)) //testing
+       // itemNumber++;
+       // localStorage.setItem("itemNumber", itemNumber);
+     //}
+
+    while (cartItems.hasChildNodes()){
+        items.push(cartItemNames[0].innerText);
+        cartItems.removeChild(cartItems.firstChild);
+    }
+
+    orders[orderNumber] = items;
+    localStorage.setItem("orders", JSON.stringify(orders));
+    orderNumber++
+    localStorage.setItem("orderNumber", orderNumber);
+    updateCartTotal;
+
      //this marks the end of this order
-     sessionStorage.setItem(`${orderNumber}${itemNumber}`, "end")
-     orderNumber++;
-     updateCartTotal();     
+     //localStorage.setItem(`${orderNumber}-${itemNumber}`, "end")
+     //orderNumber++;
+     //localStorage.setItem("orderNumber", orderNumber);
+     //itemNumber = 0;
+     //localStorage.setItem("itemNumber", itemNumber);
+     //updateCartTotal();     
  }
