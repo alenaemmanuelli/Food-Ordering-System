@@ -1,5 +1,7 @@
 // cart object, session only
 const cart = {};
+let orderNumber = 0;
+let itemNumber = 0;
 
 // DOM references
 const cartItems = document.getElementById('cart-items');
@@ -129,17 +131,21 @@ function updateCartTotal(){
  
 }
 
+//delete items from the cart and save them to sessionStorage
  function purchaseClicked(){
-     alert('Thank you for your purchase!!!');
-     let count = 0;
+     alert('Thank you for your purchase!');
      var cartItems = document.getElementsByClassName('cart-items')[0];
      var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
+
      while(cartItems.hasChildNodes()){
-        console.log("currently in cartItems array: " + cartItemNames[0].innerText)
-        sessionStorage.setItem("Item " + count.toString(), cartItemNames[0].innerText)
+        console.log("currently in cartItems array: " + cartItemNames[0].innerText) //testing
+        sessionStorage.setItem(`${orderNumber}${itemNumber}`, cartItemNames[0].innerText)
         cartItems.removeChild(cartItems.firstChild)
-        console.log("what is being saved: " + sessionStorage.getItem("Item " + count.toString()))
-        count++;
+        console.log("what is being saved: " + sessionStorage.getItem(`${orderNumber}${itemNumber}`)) //testing
+        itemNumber++;
      }
+     //this marks the end of this order
+     sessionStorage.setItem(`${orderNumber}${itemNumber}`, "end")
+     orderNumber++;
      updateCartTotal();     
  }
