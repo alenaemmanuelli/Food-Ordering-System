@@ -55,3 +55,10 @@ footer {
     padding: 5px
 }
 
+.dashboard-link {
+    display: none;
+}
+
+body.logged-in .dashboard-link {
+    display: block;
+}
