@@ -1,0 +1,67 @@
+/* Centers and limits the width of the inventory section */
+.inventory-section {
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Page heading */
+.inventory-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+/* Full-width table with no gaps between cell borders */
+.inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+/* Cell borders and padding for all header and data cells */
+.inventory-table th,
+.inventory-table td {
+    border: 1px solid #ccc;
+    padding: 10px 14px;
+    text-align: center;
+}
+
+/* Header row background matches the site's cyan theme */
+.inventory-table thead {
+    background-color: rgba(200, 253, 253, 0.683);
+    font-weight: bold;
+}
+
+/* Alternating row color for readability */
+.inventory-table tbody tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Green text for items that are in stock */
+.status-in {
+    color: green;
+    font-weight: bold;
+}
+
+/* Red text for items that are out of stock */
+.status-out {
+    color: red;
+    font-weight: bold;
+}
+
+/* Update button styling */
+.update-btn {
+    padding: 5px 14px;
+    background-color: rgb(34, 130, 191);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Darker blue on hover */
+.update-btn:hover {
+    background-color: rgb(25, 100, 155);
+}

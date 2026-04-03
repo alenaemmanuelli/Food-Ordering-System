@@ -1,5 +1,45 @@
 // cart object, session only
 const cart = {};
+
+// Inventory helpers
+var INVENTORY_ITEMS = [
+    "Item 1", "Item 2", "Item 3",
+    "Item 4", "Item 5", "Item 6",
+    "Item 7", "Item 8", "Item 9"
+];
+
+function initInventory() {
+    var inventory = JSON.parse(localStorage.getItem("inventory")) || {};
+    var changed = false;
+    INVENTORY_ITEMS.forEach(function (name) {
+        if (inventory[name] === undefined) {
+            inventory[name] = 10;
+            changed = true;
+        }
+    });
+    if (changed) {
+        localStorage.setItem("inventory", JSON.stringify(inventory));
+    }
+}
+
+// Disables "Add to Cart" for items with 0 stock
+function checkStockOnMenu() {
+    var inventory = JSON.parse(localStorage.getItem("inventory")) || {};
+    var menuItems = document.getElementsByClassName("menu-item");
+    for (var i = 0; i < menuItems.length; i++) {
+        var item = menuItems[i];
+        var name = item.dataset.name;
+        var btn = item.getElementsByClassName("add-button")[0];
+        var qty = (inventory[name] !== undefined) ? inventory[name] : 10;
+        if (qty <= 0) {
+            btn.disabled = true;
+            btn.textContent = "Out of Stock";
+        } else {
+            btn.disabled = false;
+            btn.textContent = "Add to Cart";
+        }
+    }
+}
 //let orderNumber = parseInt(localStorage.getItem("orderNumber")) || 0;
 //let itemNumber = parseInt(localStorage.getItem("itemNumber")) || 0;
 
@@ -21,8 +61,10 @@ else{
 
 //listeners for button presses
 function ready(){
+    initInventory();
+    checkStockOnMenu();
 
-    //activates addToCart function 
+    //activates addToCart function
     var addToCartButtons = document.getElementsByClassName('add-button');
     for(var i = 0; i< addToCartButtons.length; i++){
         var button = addToCartButtons[i];
@@ -53,8 +95,16 @@ function addToCart(event) {
     var shopItem = button.parentElement;
     var title = shopItem.dataset.name;
     var price = shopItem.dataset.price;
-    console.log(title, price) //TESTING
-    addItemToCart(title,price);
+
+    // Block adding out-of-stock items
+    var inventory = JSON.parse(localStorage.getItem("inventory")) || {};
+    var qty = (inventory[title] !== undefined) ? inventory[title] : 10;
+    if (qty <= 0) {
+        alert(title + " is out of stock and cannot be added to the cart.");
+        return;
+    }
+
+    addItemToCart(title, price);
     updateCartTotal();
 }
 
@@ -131,40 +181,61 @@ function updateCartTotal(){
  
 }
 
-//delete items from the cart and save them to localStorage
- function purchaseClicked(){
-     alert('Thank you for your purchase!');
-     var cartItems = document.getElementsByClassName('cart-items')[0];
-     var cartItemNames = cartItems.getElementsByClassName('cart-item-title');
-    let orders = JSON.parse(localStorage.getItem("orders")) || {};
-    let orderNumber = parseInt(localStorage.getItem("orderNumber")) || 0;
-    let items = [];
+// Saves cart to localStorage and deducts inventory
+function purchaseClicked() {
+    var cartItemsEl = document.getElementsByClassName('cart-items')[0];
+    var cartRows = cartItemsEl.getElementsByClassName('cart-row');
 
-     //while(cartItems.hasChildNodes()){
-        //console.log("currently in cartItems array: " + cartItemNames[0].innerText) //testing
-        //localStorage.setItem(`${orderNumber}-${itemNumber}`, cartItemNames[0].innerText)
-        //cartItems.removeChild(cartItems.firstChild)
-        //console.log("what is being saved: " + localStorage.getItem(`${orderNumber}-${itemNumber}`)) //testing
-       // itemNumber++;
-       // localStorage.setItem("itemNumber", itemNumber);
-     //}
-
-    while (cartItems.hasChildNodes()){
-        items.push(cartItemNames[0].innerText);
-        cartItems.removeChild(cartItems.firstChild);
+    if (cartRows.length === 0) {
+        alert('Your cart is empty!');
+        return;
     }
 
-    orders[orderNumber] = items;
-    localStorage.setItem("orders", JSON.stringify(orders));
-    orderNumber++
-    localStorage.setItem("orderNumber", orderNumber);
-    updateCartTotal;
+    // Read all cart items and quantities before modifying the DOM
+    var orderItems = [];
+    for (var i = 0; i < cartRows.length; i++) {
+        var name = cartRows[i].getElementsByClassName('cart-item-title')[0].innerText;
+        var qty = parseInt(cartRows[i].getElementsByClassName('cart-quantity-input')[0].value);
+        orderItems.push({ name: name, qty: qty });
+    }
 
-     //this marks the end of this order
-     //localStorage.setItem(`${orderNumber}-${itemNumber}`, "end")
-     //orderNumber++;
-     //localStorage.setItem("orderNumber", orderNumber);
-     //itemNumber = 0;
-     //localStorage.setItem("itemNumber", itemNumber);
-     //updateCartTotal();     
- }
+    // Check inventory for each item
+    var inventory = JSON.parse(localStorage.getItem("inventory")) || {};
+    var insufficient = [];
+    orderItems.forEach(function (item) {
+        var available = (inventory[item.name] !== undefined) ? inventory[item.name] : 10;
+        if (available < item.qty) {
+            insufficient.push(item.name + " (available: " + available + ", requested: " + item.qty + ")");
+        }
+    });
+
+    if (insufficient.length > 0) {
+        alert("Cannot place order. Insufficient stock for:\n" + insufficient.join("\n") + "\n\nPlease update your cart.");
+        return;
+    }
+
+    // Deduct inventory quantities
+    orderItems.forEach(function (item) {
+        var current = (inventory[item.name] !== undefined) ? inventory[item.name] : 10;
+        inventory[item.name] = current - item.qty;
+    });
+    localStorage.setItem("inventory", JSON.stringify(inventory));
+
+    // Save order
+    var orders = JSON.parse(localStorage.getItem("orders")) || {};
+    var orderNumber = parseInt(localStorage.getItem("orderNumber")) || 0;
+    var itemNames = orderItems.map(function (item) { return item.name; });
+    orders[orderNumber] = itemNames;
+    localStorage.setItem("orders", JSON.stringify(orders));
+    orderNumber++;
+    localStorage.setItem("orderNumber", orderNumber);
+
+    // Clear the cart DOM
+    while (cartItemsEl.hasChildNodes()) {
+        cartItemsEl.removeChild(cartItemsEl.firstChild);
+    }
+
+    updateCartTotal();
+    checkStockOnMenu();
+    alert("Thank you for your purchase! Your order number is " + (orderNumber - 1) + ".");
+}

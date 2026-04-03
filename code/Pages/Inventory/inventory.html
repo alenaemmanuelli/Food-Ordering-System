@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Tracker</title>
+    <link rel="stylesheet" href="../style.css">   <!-- shared navbar/footer styles -->
+    <link rel="stylesheet" href="inventory.css">  <!-- inventory table styles -->
+</head>
+<body>
+    <!-- Navbar - Inventory and Search Dashboard links only show when logged in -->
+    <nav class="navbar">
+        <a href="../Index/index.html" class="titleheader">
+            <img src="../assets/logo.png" alt="Quadrant One Logo" class="logo">
+            <h1>Quadrant One Food Ordering</h1>
+        </a>
+        <ul class="navbarlinks">
+            <li><a href="../Menu/menu.html">Menu</a></li>
+            <li><a href="../Rewards/rewards.html">Deals</a></li>
+            <li class="dashboard-link"><a href="../Dashboard/dashboard.html">Search Dashboard</a></li>
+            <li class="dashboard-link"><a href="../Inventory/inventory.html">Inventory</a></li>
+            <li><a href="../Login/login.html">Employee Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main inventory table - rows are filled in by inventory.js -->
+    <section class="inventory-section">
+        <h2>Inventory Tracker</h2>
+        <table class="inventory-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="inventory-body"></tbody> <!-- JS populates rows here -->
+        </table>
+    </section>
+
+    <script src="../Login/nav-auth.js"></script> <!-- shows employee nav links if logged in -->
+    <script src="inventory.js"></script>          <!-- inventory logic -->
+    <footer><p>&copy; 2026 Quadrant One Food. All rights reserved.</p></footer>
+</body>
+</html>
