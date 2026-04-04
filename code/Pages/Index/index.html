@@ -4,53 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="index.css">
     <title>The Quadrant One Food Ordering Webpage</title>
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar">
         <a href="index.html" class="titleheader">
             <img src="../assets/logo.png" alt="Quadrant One Logo" class="logo">
             <h1>Quadrant One Food Ordering</h1>
         </a>
         <ul class="navbarlinks">
-            <li><a href="../Menu/menu.html">Menu</a></li> 
+            <li><a href="../Menu/menu.html">Menu</a></li>
             <li><a href="../Rewards/rewards.html">Deals</a></li>
             <li class="dashboard-link"><a href="../Dashboard/dashboard.html">Search Dashboard</a></li>
             <li class="dashboard-link"><a href="../Inventory/inventory.html">Inventory</a></li>
             <li><a href="../Login/login.html">Employee Login</a></li>
         </ul>
     </nav>
+
+    <!-- Hero banner -->
+    <section class="hero">
+        <h2>Fresh Food, Fast.</h2>
+        <p>Browse our menu and place your order in minutes.</p>
+        <a href="../Menu/menu.html" class="hero-btn">Order Now</a>
+    </section>
+
     <main class="index-wrap">
+
+        <!-- Hot items cards -->
         <section class="hot-items">
             <h2>Hot Menu Items</h2>
-            <div class="hot-item">
-                <img src="" alt="">
-                <h3>Item</h3>
-                <p>$x.xx</p>
-                <a href="">View Menu</a>
-            </div>
-            <div class="hot-item">
-                <img src="" alt="">
-                <h3>Item</h3>
-                <p>$x.xx</p>
-                <a href="">View Menu</a>
-            </div>
-            <div class="hot-item">
-                <img src="" alt="">
-                <h3>Item</h3>
-                <p>$x.xx</p>
-                <a href="">View Menu</a>
+            <div class="hot-items-grid">
+                <div class="hot-item">
+                    <img src="" alt="Item">
+                    <div class="hot-item-info">
+                        <h3>Item</h3>
+                        <p>$x.xx</p>
+                        <a href="../Menu/menu.html">View Menu</a>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <img src="" alt="Item">
+                    <div class="hot-item-info">
+                        <h3>Item</h3>
+                        <p>$x.xx</p>
+                        <a href="../Menu/menu.html">View Menu</a>
+                    </div>
+                </div>
+                <div class="hot-item">
+                    <img src="" alt="Item">
+                    <div class="hot-item-info">
+                        <h3>Item</h3>
+                        <p>$x.xx</p>
+                        <a href="../Menu/menu.html">View Menu</a>
+                    </div>
+                </div>
             </div>
         </section>
+
+        <!-- Deals banner -->
         <section class="rewards-section">
             <h2>Check Our HOT Deals!</h2>
             <p>Click <a href="../Rewards/rewards.html">Here</a> to see more deals and offers.</p>
         </section>
+
     </main>
-    <footer><p>&copy; 2026 Quadrant One Food. All rights reserved.</p></footer>
+
     <script src="../Login/nav-auth.js"></script>
     <footer><p>&copy; 2026 Quadrant One Food. All rights reserved.</p></footer>
-
 </body>
 </html>

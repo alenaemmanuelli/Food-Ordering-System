@@ -1,0 +1,149 @@
+/* ── Hero Banner ────────────────────────────────────────────── */
+.hero {
+    background: linear-gradient(135deg, rgb(34, 130, 191), rgb(20, 80, 120));
+    text-align: center;
+    padding: 60px 20px 50px;
+    border-bottom: 2px solid rgba(34, 130, 191, 0.2);
+}
+
+.hero h2 {
+    font-size: 2.4rem;
+    margin: 0 0 12px;
+    color: #ffffff;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 0 0 24px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: rgb(34, 130, 191);
+    color: white;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 999px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.hero-btn:hover {
+    background-color: rgb(25, 100, 155);
+    transform: translateY(-2px);
+}
+
+/* ── Hot Items Section ──────────────────────────────────────── */
+.hot-items {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.hot-items h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.hot-items-grid {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Individual item card */
+.hot-item {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 260px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.hot-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.13);
+}
+
+/* Image placeholder when no image is provided */
+.hot-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    background-color: rgba(200, 253, 253, 0.683);
+    display: block;
+}
+
+.hot-item-info {
+    padding: 16px;
+}
+
+.hot-item-info h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    color: #111;
+}
+
+.hot-item-info p {
+    margin: 0 0 14px;
+    font-size: 1rem;
+    color: #555;
+    font-weight: 600;
+}
+
+.hot-item-info a {
+    display: inline-block;
+    background-color: rgb(34, 130, 191);
+    color: white;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.hot-item-info a:hover {
+    background-color: rgb(25, 100, 155);
+    transform: translateY(-1px);
+}
+
+/* ── Deals Banner ───────────────────────────────────────────── */
+.rewards-section {
+    background: linear-gradient(135deg, rgba(34, 130, 191, 0.12), rgba(200, 253, 253, 0.7));
+    border-top: 2px solid rgba(34, 130, 191, 0.15);
+    border-bottom: 2px solid rgba(34, 130, 191, 0.15);
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0 0 50px;
+}
+
+.rewards-section h2 {
+    font-size: 1.7rem;
+    margin: 0 0 10px;
+    color: #111;
+}
+
+.rewards-section p {
+    font-size: 1rem;
+    color: #444;
+    margin: 0;
+}
+
+.rewards-section a {
+    color: rgb(34, 130, 191);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.rewards-section a:hover {
+    text-decoration: underline;
+}
