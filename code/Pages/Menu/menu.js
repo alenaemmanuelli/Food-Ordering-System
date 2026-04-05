@@ -43,13 +43,6 @@ function checkStockOnMenu() {
 //let orderNumber = parseInt(localStorage.getItem("orderNumber")) || 0;
 //let itemNumber = parseInt(localStorage.getItem("itemNumber")) || 0;
 
-// DOM references
-const cartItems = document.getElementById('cart-items');
-const cartTotal = document.getElementById('cart-total');
-const cartCount = document.getElementById('cart-count');
-const cartSubtotal = document.getElementById('cart-subtotal');
-const orderButton = document.getElementById('order-button');
-
 //Check if document is finished loading before allowing cart to be changed
 if (document.readyState == 'loading'){
     document.addEventListener('DOMContentLoaded' , ready);
