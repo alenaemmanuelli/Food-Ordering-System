@@ -1,16 +1,5 @@
-# Quadrant One
-## Fast Food Ordering System
-
-### **File Structure**
-
-*Code* - 
-  This will hold all of the code necessary for the project to run.
-
-*Planning Documents* - 
-  This will hold documents written for planning purposes.
-
-*Meeting Minutes* - 
-  This will hold details regarring meetings by the team during production.
-
-*Project Reports* - 
-  This will hold the deliverables needed for submission of the project.
+# Fast Food Ordering System
+## NOTE: This is a group project done with classmates for class "Software Requirement, Analysis, and Testing".
+## Please refer to folder CODE for the website.
+## The link below will redirect you to the Requirements Specification Document.
+### https://docs.google.com/document/d/1yIibH4Z64_FG7ddfPAdoLbaNWIO2g_f4pkW44BmnY2o/edit?usp=sharing
